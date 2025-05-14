@@ -10,15 +10,20 @@ function App() {
 
   return (
     <>
-    <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
-    {nomeUsuario.length > 4 && (
-      <>
-        <Perfil nomeUsuario={nomeUsuario}/>
-        <ReposList nomeUsuario={nomeUsuario} />
-      </>
-    )}
-    
-    {/* {formularioEstaVisivel && (
+      <div className='headerContainer'>
+        <input className='headerInput' placeholder='Nome do usuário' type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+        <button className='searchButton'>
+          <img className='searchIcon' src="src/assets/search-svgrepo-com.svg" alt="" />
+        </button>
+      </div>
+      {nomeUsuario.length > 4 && (
+        <>
+          <Perfil nomeUsuario={nomeUsuario} />
+          <ReposList nomeUsuario={nomeUsuario} />
+        </>
+      )}
+
+      {/* {formularioEstaVisivel && (
       <Formulario />
     )}
     <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type='button'>toggle form</button> */}

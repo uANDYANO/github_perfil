@@ -1,11 +1,14 @@
 import styles from './Perfil.module.css'
 
 const Perfil = ({ nomeUsuario }) => {
+    const avatar = `https://github.com/${nomeUsuario}.png`
+    const nomeUpper = nomeUsuario.toUpperCase();
+
     return (
         <header className={styles.header}>
-            <img className={styles.avatar} src={`https://github.com/${nomeUsuario}.png`}/>
+            <img className={styles.avatar} src={avatar}/>
             <h1 className={styles.name}>
-                {nomeUsuario}
+                {nomeUpper}
             </h1>
         </header>
     )
